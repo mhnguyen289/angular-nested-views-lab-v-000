@@ -1,6 +1,6 @@
 angular
     .module('app', ['ui.router'])
-    .config(function ($stateProvider){
+    .config(function ($stateProvider, $urlRouterProvider){
     	$stateProvider
     		.state('home', {
     			url: '/',
@@ -20,5 +20,7 @@ angular
     		.state('home.user', {
     			url: 'user',
     			templateUrl: 'views/home/user.html'
-    		})
+    		});
+
+    	$urlRouterProvider.otherwise('/');
     });
